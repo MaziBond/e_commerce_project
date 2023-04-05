@@ -269,3 +269,77 @@ ul li a:hover{
 .icons ion-icon:hover{
     color: #ff7200;
 }
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Arial;
+}
+  
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+  
+form button[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #428bca;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2 ease-in-out;
+}
+  
+form button[type="submit"]:hover {
+    background-color: #3071a9;
+}
+
+form.auth-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+form.auth-user input[type="text"],
+form.auth-user input[type="email"],
+form.auth-user input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+  
+form.auth-user button[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #428bca;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2 ease-in-out;
+}
+  
+form.auth-user button[type="submit"]:hover {
+    background-color: #3071a9;
+}
