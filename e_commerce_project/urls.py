@@ -21,6 +21,6 @@ from contact_us.views import contact
 
 urlpatterns = [
     path('', index, name='index'),
-    path('contact/', contact),
+    path('contact-us/', contact, name='contact-us'),
     path('admin/', admin.site.urls),
 ]
