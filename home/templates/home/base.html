@@ -4,6 +4,9 @@
 <head>
     <title>| Tree House</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -15,9 +18,13 @@
 
             <div class="menu">
                 <ul>
+<<<<<<< HEAD
                     <li><a href="{% url 'index' %}">HOME</a></li>
+=======
+                    <li><a href="{% url 'index'%}">HOME</a></li>
+>>>>>>> main
                     <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="{% url 'contact-us'%}">CONTACT</a></li>
                 </ul>
             </div>
             
@@ -29,8 +36,6 @@
                  expedita atque eveniet <br> quis nesciunt. Quos nulla vero consequuntur, fugit nemo ad delectus 
                 <br> a quae totam ipsa illum minus laudantium?</p>
 
-     
-
                 <div class="login">
                     
                     <button class="btnn"><a href="{% url 'login' %}">Login</a></button>
@@ -39,9 +44,13 @@
                 </div>
                     </div>
                 </div>
+<<<<<<< HEAD
              {% endblock %}
+=======
+            {% endblock %}
+>>>>>>> main
         </div>
     </div>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 </html>
+
