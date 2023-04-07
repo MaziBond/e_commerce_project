@@ -6,23 +6,18 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
     <div class="main">
         <div class="navbar">
             <div class="icon">
-                <h2 class="logo">Tree|House</h2>
+               <a href="{% url 'index' %}"><h2 class="logo">Tree|House</h2></a>
             </div>
 
             <div class="menu">
                 <ul>
-<<<<<<< HEAD
                     <li><a href="{% url 'index' %}">HOME</a></li>
-=======
-                    <li><a href="{% url 'index'%}">HOME</a></li>
->>>>>>> main
                     <li><a href="#">ABOUT</a></li>
                     <li><a href="{% url 'contact-us'%}">CONTACT</a></li>
                 </ul>
@@ -38,17 +33,13 @@
 
                 <div class="login">
                     
-                    <button class="btnn"><a href="{% url 'login' %}">Login</a></button>
-                    <button class="btnn"><a href="{% url 'signup' %}">Sign up</a></button>
+                    <a href="{% url 'login' %}"><button class="btnn">Login</button></a>
+                    <a href="{% url 'signup' %}"><button class="btnn">Sign up</button></a>
 
                 </div>
                     </div>
                 </div>
-<<<<<<< HEAD
              {% endblock %}
-=======
-            {% endblock %}
->>>>>>> main
         </div>
     </div>
 </body>

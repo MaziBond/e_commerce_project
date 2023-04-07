@@ -5,9 +5,8 @@ from .models import User
 
 
 class UserCreationForm(forms.ModelForm):
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(
-        label='Password confirmation', widget=forms.PasswordInput)
+    password1 = forms.CharField(label='password1', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='password2', widget=forms.PasswordInput)
 
     class Meta:
         model = User
