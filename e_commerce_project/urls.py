@@ -18,9 +18,13 @@ from django.urls import path
 
 from home.views import index
 from contact_us.views import contact
+from user_auth.views import register, user_login
 
 urlpatterns = [
     path('', index, name='index'),
     path('contact-us/', contact, name='contact-us'),
     path('admin/', admin.site.urls),
+    path('login/', user_login, name='login'),
+    path('register/',register,name='signup')
+
 ]

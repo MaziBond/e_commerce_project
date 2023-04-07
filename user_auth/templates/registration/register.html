@@ -1,0 +1,32 @@
+{% extends 'home/base.html' %}
+
+{% block content %}}
+<h2 id="auth">Register</h2>
+<form method="post" class="container">
+    {% csrf_token %}
+    <div>
+        <label for="{{ form.first_name.id_for_label }}">First Name</label>
+        {{ form.first_name }}
+    </div>
+    <div>
+        <label for="{{ form.last_name.id_for_label }}">Last Name</label>
+        {{ form.last_name }}
+    </div>
+    <div>
+        <label for="{{ form.email.id_for_label }}">Email Address</label>
+        {{ form.email }}
+    </div>
+    <div>
+        <label for="{{ form.password1.id_for_label }}">Password</label>
+        {{ form.password1 }}
+    </div>
+    <div>
+        <label for="{{ form.password2.id_for_label }}">Password Confirmation</label>
+        {{ form.password2 }}
+    </div>
+    <div class="register-submit">
+        <button type="submit">Register</button>
+        <h5>Already Signed up? <a href="{% url 'login'%}"> Sign In</a></h5>
+    </div>
+</form>
+{% endblock %}
