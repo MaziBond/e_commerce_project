@@ -154,8 +154,7 @@ textarea
     color: #000;
 }
 
-
-button[type="submit"] {
+.contact-us-button button[type="submit"] {
     display: inline-block;
     padding: 10px 20px;
     background-color: #007bff;
@@ -181,7 +180,6 @@ button[type="submit"]:hover {
 .user-auth-form-group input[type="last_name"],
 .user-auth-form-group input[type="email"],
 .user-auth-form-group input[type="password"] {
- 
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -249,7 +247,7 @@ button[type="submit"]:hover {
 
 .container button {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
@@ -257,7 +255,7 @@ button[type="submit"]:hover {
 }
 
 .container button:hover {
-  background-color: #45a049;
+  background-color: #007bff;
 }
 
 .container h5 {
@@ -278,3 +276,78 @@ button[type="submit"]:hover {
   position: relative;
   top: 50px; 
 }
+
+.content-section {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 30px;
+  color: #000;
+}
+
+.account-img {
+  margin-left: 30%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.account-heading {
+  font-size: 2rem;
+}
+
+.text-secondary {
+  color: #6c757d;
+  font-size: 1.2rem;
+}
+
+.profile-form-group {
+  margin-bottom: 30px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-form-group legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.profile-form-group label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile-form-group input[type="text"],
+select {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  padding: 10px;
+  width: 100%;
+  color: #000;
+}
+
+.profile-button button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  margin-right: 20px;
+}
+
+#dob-label {
+    margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #0069d9;
+}
+
