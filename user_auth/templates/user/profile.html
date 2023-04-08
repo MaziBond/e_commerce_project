@@ -1,0 +1,52 @@
+{% extends 'home/base.html'%}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title%}{%endblock%}
+{% block content %}
+<div class="my-container-class">
+    <div class="content-section">
+        <div class="media">
+            <img class="account-img" src="{{ user.userprofile.image.url }}" />
+        </div>
+        <!-- FORM HERE -->
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="profile-form-group">
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                <div>
+                    <label for="{{ form.first_name.id_for_label }}">First Name</label>
+                    {{ user_form.first_name }}
+                </div>
+                <div>
+                    <label for="{{ form.first_name.id_for_label }}">Last Name</label>
+                    {{ user_form.last_name }}
+                </div>
+                <div id="dob-label">
+                    <label for="{{ form.first_name.id_for_label }}">Date of birth:</label>
+                    {{ profile_form.date_of_birth }}
+                </div>
+                <div>
+                    <label for="{{ form.first_name.id_for_label }}">Address</label>
+                    {{ profile_form.address }}
+                </div>
+                <div>
+                    <label for="{{ form.first_name.id_for_label }}">City</label>
+                    {{ profile_form.city }}
+                </div>
+                <div>
+                    <label for="{{ form.first_name.id_for_label }}">Country</label>
+                    {{ profile_form.country }}
+                </div>
+                <div>
+                    <legend class="border-bottom mb-4" for="{{ profile_form.image.id_for_label }}"></legend>
+                    {{ profile_form.image }}
+                </div>
+            </fieldset>
+            <div class="profile-button">
+                <button type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
