@@ -27,6 +27,7 @@ from user_auth.views import (
     create_profile, 
     get_profile)
 from product_pages.views import dashboard
+from about_us.views import contributors
 
 
 urlpatterns = [
@@ -38,7 +39,8 @@ urlpatterns = [
     path('register/',register, name='signup'),
     path('user-profile-edit/', create_profile, name='profile-edit'),
     path('user-profile/', get_profile, name='get-profile'),
-    path('dashboard/', dashboard, name='dashboard')
+    path('dashboard/', dashboard, name='dashboard'),
+    path('about-us', contributors, name='about-us')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

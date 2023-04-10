@@ -410,3 +410,60 @@ select {
 #logout {
   margin-left: 100%;
 }
+
+.contributors h1 {
+  align-items: top;
+  text-align: center;
+}
+
+.contributors {
+    max-height: 100vh;
+    overflow: auto;
+}
+
+.founder-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: top;
+}
+
+.card {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #b3b5bf;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card p {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.card img {
+  width: 150px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #ff7200;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
