@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'home',
     'user_auth',
     'contact_us',
-    'product_pages']
+    'product_pages',
+    'about_us',
+    ]
 
 AUTH_USER_MODEL = 'user_auth.User'
 
