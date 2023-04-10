@@ -14,15 +14,14 @@
                <a href="{% url 'home' %}"><h2 class="logo">Tree|House</h2></a>
             </div>
             {% block title%}
-            <div class="menu">
-                <ul>
-                    <li><a href="{% url 'home' %}">HOME</a></li>
-                    <li><a href="{% url 'profile' %}">ABOUT</a></li>
-                    <li><a href="{% url 'contact-us'%}">CONTACT</a></li>
-                </ul>
-            </div>
+                <div class="menu">
+                    <ul>
+                            <li><a href="{% url 'home' %}">HOME</a></li>
+                            <li><a href="{% url 'profile-edit' %}">ABOUT</a></li>
+                            <li><a href="{% url 'contact-us'%}">CONTACT</a></li>
+                    </ul>
+                </div>
             {%endblock%}
-            
         </div> 
         <div class="content">
             {% block content %}
@@ -32,10 +31,8 @@
                 <br> a quae totam ipsa illum minus laudantium?</p>
 
                 <div class="login">
-                    
                     <a href="{% url 'login' %}"><button class="btnn">Login</button></a>
                     <a href="{% url 'signup' %}"><button class="btnn">Sign up</button></a>
-
                 </div>
                     </div>
                 </div>

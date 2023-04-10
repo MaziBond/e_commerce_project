@@ -1,0 +1,34 @@
+{% extends 'dashboard/dashboard.html'%}
+
+{% block title%}{%endblock%}
+{% block content %}
+<div class="sidenav">
+    <a href="{% url 'get-profile' %}">Profile</a>
+    <a href="{% url 'dashboard' %}">Products</a>
+    <a href="{% url 'logout'%}">Log Out</a>
+</div>
+<div class="my-container-class">
+    <div class="content-section">
+        <div class="media">
+            <img class="account-img" src="{{ user.userprofile.image.url }}" />
+        </div>
+        <div class="profile-form-group">
+            <hr>
+            <h2 id='profile-h2'>User Info:</h2>
+            <div class="profile-content">
+                <ul>
+                    <li>Full Name: {{ user_detail.first_name }} {{ user_detail.last_name }}</li>
+                    <li>Email: {{ user_detail.email }}</li>
+                    <li>Date of birth: {{ user_profile.date_of_birth }}</li>
+                    <li>Address: {{ user_profile.address }}</li>
+                    <li>City: {{ user_profile.city }}</li>
+                    <li>Country: {{ user_profile.country }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="profile-button get-profile">
+            <a href="{% url 'profile-edit' %}"><button type="submit">Edit Profile</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
