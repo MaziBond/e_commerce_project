@@ -20,7 +20,13 @@ from django.conf.urls.static import static
 
 from home.views import index
 from contact_us.views import contact
-from user_auth.views import register, user_login, profile
+from user_auth.views import (
+    register, 
+    user_login,
+    user_logout,
+    create_profile, 
+    get_profile)
+from product_pages.views import dashboard
 
 
 urlpatterns = [
@@ -28,8 +34,11 @@ urlpatterns = [
     path('contact-us/', contact, name='contact-us'),
     path('admin/', admin.site.urls),
     path('login/', user_login, name='login'),
+    path('logout/', user_logout, name='logout'),
     path('register/',register, name='signup'),
-    path('user-profile', profile, name='profile')
+    path('user-profile-edit/', create_profile, name='profile-edit'),
+    path('user-profile/', get_profile, name='get-profile'),
+    path('dashboard/', dashboard, name='dashboard')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

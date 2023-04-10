@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'home',
     'user_auth',
-    'contact_us']
+    'contact_us',
+    'product_pages']
 
 AUTH_USER_MODEL = 'user_auth.User'
 
@@ -77,6 +78,8 @@ TEMPLATES = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 WSGI_APPLICATION = 'e_commerce_project.wsgi.application'
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',]
+
 
 
 # Database
