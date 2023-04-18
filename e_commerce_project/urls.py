@@ -26,7 +26,7 @@ from user_auth.views import (
     user_logout,
     create_profile, 
     get_profile)
-from product_pages.views import dashboard
+from product_pages.views import dashboard, get_all_reviews, reviews, get_single_review
 from about_us.views import contributors
 
 
@@ -40,7 +40,10 @@ urlpatterns = [
     path('user-profile-edit/', create_profile, name='profile-edit'),
     path('user-profile/', get_profile, name='get-profile'),
     path('dashboard/', dashboard, name='dashboard'),
-    path('about-us', contributors, name='about-us')
+    path('about-us/', contributors, name='about-us'),
+    path('reviews/<int:product_id>/', get_all_reviews, name='get-reviews'),
+    path('add-review/<int:product_id>/', reviews, name='add-review'),
+    path('read-review/<int:review_id>/', get_single_review, name='read-review'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

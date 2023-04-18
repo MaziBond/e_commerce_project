@@ -1,0 +1,30 @@
+{%extends 'home/base.html' %}
+{% block content %}
+
+<div class="sidenav">
+    <a href="{% url 'get-profile' %}">Profile</a>
+    <a href="{% url 'dashboard' %}">Products</a>
+    <a href="{% url 'logout'%}">Log Out</a>
+</div>
+<div>
+    <h3>Reviews</h3>
+    <form method="post" class="container review-class">
+        {% csrf_token %}
+        <div>
+            <label for="{{ form.content.id_for_label }}">Comment</label>
+            {{ form.content }}
+        </div>
+        <div>
+            <label for="{{ form.rating.id_for_label }}">Rate</label>
+            {{ form.rating }}
+        </div>
+
+        <div class="register-submit">
+            <button type="submit">Submit Review</button>
+        </div>
+    </form>
+    
+</div>
+
+
+{%endblock%}

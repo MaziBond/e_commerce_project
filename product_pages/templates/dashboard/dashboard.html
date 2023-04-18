@@ -1,15 +1,32 @@
 {%extends 'home/base.html' %}
 {% block content %}
 
-<div class="sidenav">
-    <a href="{% url 'get-profile' %}">Profile</a>
-    <a href="#">Products</a>
-</div>
+    <div class="sidenav">
+        <a href="{% url 'get-profile' %}">Profile</a>
+        <a href="{% url 'dashboard' %}">Products</a>
+        <a href="{% url 'logout'%}">Log Out</a>
+    </div>
+    <div class="outer-container">
+        {% for product in products %}
+        <div class="dashboard-card">
+            <img class="dashboard-img" src="{{ product.image.url }}" alt="Avatar">
+            <div class="dashboard-container">
+                    <h3><b>{{product.product_name}}</b></h3>
+                    <h4>{{product.brand_name}}</h4>
+                    <h4>Average cost: £{{product.price}}</h4>
+                    <div class="category">
+                        {% for category in product.categories.all %}
+                            <h5>{{ category }}</h5>
+                        {% endfor %}
+                    </div>
+                    <p>{{product.description}}</p>
+                    <small>Released: {{product.product_release_date}}</small>
+                    <br>
+                    <br>
+                    <a href="{% url 'get-reviews'  product_id=product.id %}">View Reviews</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
-<div class="main-dashboard">
-    <h2>Hello World</h2>
-    <p>Hello World.</p>
-    <p>Hello world.</p>
-    <p>Some random text..</p>
-</div>
 {%endblock%}

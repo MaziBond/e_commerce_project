@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404
+from .models import AboutUs
 
 def contributors(request):
-    return render(request, 'about_us/about_us.html')
-# Create your views here.
+    about_us = get_list_or_404(AboutUs)
+    return render(request, 'about_us/about_us.html', {'about_us': about_us})
