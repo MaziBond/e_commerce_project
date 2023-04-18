@@ -1,0 +1,29 @@
+{%extends 'home/base.html' %}
+{% block content %}
+
+<div class="sidenav">
+    <a href="{% url 'get-profile' %}">Profile</a>
+    <a href="{% url 'dashboard' %}">Products</a>
+    <a href="{% url 'logout'%}">Log Out</a>
+</div>
+<div class="contributors">
+    <h3 class="align-view">Reviews</h3>
+    <div class="align-view"><a href="{% url 'add-review' product_id=product.id %}">Add your review</a></div>
+    {% for review in reviews %}
+        <div class="s-card">
+            <img src="{{ product.image.url }}" alt="Avatar">
+            <div class="s-card-body">
+                <h3 class="s-card-title change-colour">{{product.product_name}}</h3>
+                <p class="s-card-text">Comment: {{ review.content }}</p>
+                <p class="s-card-text">Rating: {{ review.rating }}</p>
+                <p class="s-card-text">Date Given: {{ review.created }}</p>
+                <p class="s-card-text">Author: {{ review.author.first_name }} {{ review.author.last_name }}</p>
+                <a href="{% url 'read-review' review_id=review.id %}" class="btn btn-primary">Read Review</a>
+            </div>
+        </div>
+    {% empty %}
+        <h3 class="align-view">There are no reviews for this product.</h3>
+    {% endfor %}
+</div>
+
+{%endblock%}

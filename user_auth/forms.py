@@ -41,9 +41,3 @@ class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name')
-
-
-#  {{ user_form|crispy }}
-#             <!-- User form -->
-#             {{ profile_form|crispy }}
-#             <!-- Profile form -->

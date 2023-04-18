@@ -281,10 +281,12 @@ button[type="submit"]:hover {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  margin: 20px auto;
   max-width: 800px;
   padding: 30px;
   color: #000;
+  margin-left: 20%;
+  overflow: auto;
+  height: 100vh;
 }
 
 .account-img {
@@ -351,7 +353,7 @@ select {
   background-color: #0069d9;
 }
 
-.sidenav {
+/* .sidenav {
   height: 100%;
   width: 200px;
   position: fixed;
@@ -379,6 +381,52 @@ select {
 
 .sidenav a:hover {
   color: #f1f1f1;
+} */
+
+/* The side navigation menu */
+.sidenav {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidenav a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidenav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidenav a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+@media screen and (max-width: 700px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidenav a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidenav a {
+    text-align: center;
+    float: none;
+  }
 }
 
 .main-dashboard {
@@ -466,4 +514,102 @@ select {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.dashboard-card {
+  box-shadow: 0 4px 8px 0;
+  transition: 0.3s;
+  width: auto;
+  border-radius: 5px;
+  background-color: #ccc;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+.outer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 200px;
+  padding: 1px 16px;
+}
+.dashboard-card img {
+  border-radius: 5px 5px 0 0;
+  object-fit: cover;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.dashboard-container {
+  padding: 2px 16px;
+  border-radius: 10px
+}
+
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.review-class {
+  color: #000;
+}
+
+.s-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+  margin-left: 20%;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  border-radius: 5px;
+}
+
+.s-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.s-card-body {
+  flex: 1;
+}
+
+.s-card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.s-card-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+.btn:hover {
+  background-color: #0069d9;
+}
+
+.change-colour {
+  color: #000;
+}
+
+.align-view {
+  margin-left: 20%;
 }
