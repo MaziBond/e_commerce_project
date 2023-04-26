@@ -2,7 +2,7 @@
 
 {% block content %}
 <h2 id="auth">Login</h2>
-<form method="post" class="container">
+<form method="POST" class="container">
     {% csrf_token %}
     <div>
         <label for="{{ form.email.id_for_label }}">Email Address</label>
@@ -15,6 +15,7 @@
     <div class="auth-submit">
         <button type="submit">Login</button>
         <h5>Don't have an account? <a href="{% url 'signup'%}"> Sign Up</a></h5>
+        <p><a href="{% url 'reset_password'%}"> Reset Password</a></p>
     </div>
 </form>
 {% endblock %}

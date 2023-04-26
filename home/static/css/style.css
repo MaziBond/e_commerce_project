@@ -268,6 +268,15 @@ button[type="submit"]:hover {
     gap: 30px;
 }
 
+.auth-submit h5 {
+  margin-top: 10px;
+}
+
+.auth-submit p {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
 .container button {
     margin: 5px;
 }
@@ -519,12 +528,13 @@ select {
 .dashboard-card {
   box-shadow: 0 4px 8px 0;
   transition: 0.3s;
-  width: auto;
+  width: 27%;
   border-radius: 5px;
   background-color: #ccc;
   margin-bottom: 1em;
   overflow: hidden;
 }
+
 .outer-container {
   display: flex;
   flex-wrap: wrap;
@@ -533,7 +543,8 @@ select {
   padding: 1px 16px;
 }
 .dashboard-card img {
-  border-radius: 5px 5px 0 0;
+  width:  100px;
+  height: 100px;
   object-fit: cover;
 }
 
