@@ -1,4 +1,5 @@
 import os
+import mimetypes
 
 """
 Django settings for e_commerce_project project.
@@ -18,6 +19,7 @@ from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+mimetypes.add_type("text/css", ".css", True)
 load_dotenv()
 
 environment_name = os.getenv('ENVIRONMENT_NAME')
@@ -26,10 +28,10 @@ environment_name = os.getenv('ENVIRONMENT_NAME')
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^$%x_q&pes*m@je-08sk-w1xczgl@*(#66z8p!!um_l6tv-ysr'
+SECRET_KEY = os.getenv('SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.getenv('DEBUG', 'False') == 'True')
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://my-app005.azurewebsites.net']
@@ -142,11 +144,13 @@ if environment_name == 'prod':
     AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
     STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/static/'
     MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/media/'
+    DEFAULT_FILE_STORAGE = 'e_commerce_project.azure_storage.AzureMediaStorage'
+    STATICFILES_STORAGE = 'e_commerce_project.azure_storage.AzureStaticStorage'
 else:
-    STATIC_URL = 'home/static/'
+    STATIC_URL = '/static/'
     MEDIA_URL  = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'home', 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Default primary key field type
@@ -155,11 +159,8 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'home', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
-
-DEFAULT_FILE_STORAGE = 'e_commerce_project.azure_storage.AzureMediaStorage'
-STATICFILES_STORAGE = 'e_commerce_project.azure_storage.AzureStaticStorage'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
