@@ -158,8 +158,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'home', 'static'),
 ]
 
-DEFAULT_FILE_STORAGE = 'core.azure_storage.AzureMediaStorage'
-STATICFILES_STORAGE = 'core.azure_storage.AzureStaticStorage'
+DEFAULT_FILE_STORAGE = 'e_commerce_project.azure_storage.AzureMediaStorage'
+STATICFILES_STORAGE = 'e_commerce_project.azure_storage.AzureStaticStorage'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
