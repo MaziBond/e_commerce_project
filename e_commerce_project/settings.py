@@ -13,10 +13,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -28,7 +30,7 @@ SECRET_KEY = 'django-insecure-^$%x_q&pes*m@je-08sk-w1xczgl@*(#66z8p!!um_l6tv-ysr
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = 'https://my-app005.azurewebsites.net'
+CSRF_TRUSTED_ORIGINS = ['https://my-app005.azurewebsites.net']
 SECURE_SSL_REDIRECT = 0
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -49,7 +51,7 @@ INSTALLED_APPS = [
     'contact_us',
     'product_pages',
     'about_us',
-    ]
+]
 
 AUTH_USER_MODEL = 'user_auth.User'
 
