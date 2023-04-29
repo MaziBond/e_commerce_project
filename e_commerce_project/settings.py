@@ -28,7 +28,9 @@ SECRET_KEY = 'django-insecure-^$%x_q&pes*m@je-08sk-w1xczgl@*(#66z8p!!um_l6tv-ysr
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSFR_TRUSTED_ORIGINS = ['https://*.azurewebsites.net', 'https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = 'https://my-app005.azurewebsites.net'
+SECURE_SSL_REDIRECT = 0
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
@@ -134,6 +136,7 @@ STATIC_URL = 'home/static/'
 MEDIA_URL  = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'home', 'staticfiles')
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -143,6 +146,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'home', 'static'),
 ]
+
+DEFAULT_FILE_STORAGE = 'core.azure_storage.AzureMediaStorage'
+STATICFILES_STORAGE = 'core.azure_storage.AzureStaticStorage'
+
+AZURE_ACCOUNT_NAME = os.getenv('AZURE_ACCOUNT_NAME')
+AZURE_ACCOUNT_KEY = os.getenv('AZURE_ACCOUNT_KEY')
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
